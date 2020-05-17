@@ -20,9 +20,11 @@ if(isset($_POST['login'])) {
 
         if (mysqli_num_rows($result) != 0){
             $row = mysqli_fetch_assoc($result);
+            
             setcookie('username',$row['uname'],time()+3600);
             session_start();
-            $_SESSION['username'] = $row['uname'];
+            $_SESSION['username'] = $row['name'];
+
             if($row['uname'] == $admin) {
                 header('location: adminDboard.php');
             }else {
