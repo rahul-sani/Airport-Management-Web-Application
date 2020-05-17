@@ -22,6 +22,7 @@ if(isset($_POST['login'])) {
             $row = mysqli_fetch_assoc($result);
             
             setcookie('username',$row['uname'],time()+3600);
+
             session_start();
             $_SESSION['username'] = $row['name'];
 
