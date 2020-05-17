@@ -5,7 +5,7 @@
 	<meta charset="utf-8"
 	 <meta name="viewport" content="width=device-width, initial-scale=1" />
 	 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asul" >
-	<link rel="stylesheet" type="text/css" href="css/styleC.css">
+	<link rel="stylesheet" type="text/css" href="../css/styleC.css">
 </head>
 <body>
 
@@ -17,7 +17,7 @@
 		<a id="flightchart" href=".html"><button type="button" class="admbtn">Flight Chart</button></a>
 		<a id="users" href=".html"><button type="button" class="admbtn">Users</button></a>
 		<a id="report" href=".html"><button type="button" class="admbtn">Generate Report</button></a><br><br>
-		<a id="logout" href="admin.html"><button type="button" class="admbtn">Logout</button></a>		
+		<a id="logout" href="logout.php"><button type="button" class="admbtn">Logout</button></a>		
 		
 	</div>
 	<footer>

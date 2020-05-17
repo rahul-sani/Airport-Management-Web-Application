@@ -13,14 +13,14 @@
 	</header>
 	<div class="main">
 		<h1> Sign Up Now </h1>
-		<form action="userDboard.html">
-			<input type="FirstName" class="text" placeholder="First Name" name="fname">
-			<input type="LastName" class="text" placeholder="Last Name" name="lname">
-			<input type="Usernamne" class="text" placeholder="Username" name="uname">
-			<input type="PhoneNumber" class="text" placeholder="Phone Number"name="phno">
-			<input type="e-mail" class="text" placeholder="Your Email" name="email">
-			<input type="Password" class="text" placeholder="Password" name="password">
-			<p class="checkbox"><input type="checkbox"> I agree to terms of services</p>
+		<form action="../php/registration.php" method="POST">
+			<input type="FirstName" class="text" placeholder="First Name" name="fname" required>
+			<input type="LastName" class="text" placeholder="Last Name" name="lname" required>
+			<input type="Usernamne" class="text" placeholder="Username" name="uname" required>
+			<input type="PhoneNumber" class="text" placeholder="Phone Number"name="phno" required>
+			<input type="e-mail" class="text" placeholder="Your Email" name="email" required>
+			<input type="Password" class="text" placeholder="Password" name="password" required>
+			<p class="checkbox"><input type="checkbox"required> I agree to terms of services</p>
 			<input type="submit" name="sumbit" value="Sign Up" class="formbutton">
 		</form>
 	</div>
