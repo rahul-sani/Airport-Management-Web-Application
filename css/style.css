@@ -112,6 +112,7 @@ div h1{
     font-size: 23px;        	
 }
 
+
 /*..............................................................................*/
 
 input.text{
@@ -140,6 +141,13 @@ input.text:focus {
     padding: 10px;
 }
 
+.formlabel{
+    display: block;
+    margin: 25px auto -10px auto;
+    font-weight:600;
+    color: green;
+}
+
 input.date{
     width: 60%;
     padding: 10px;
@@ -147,19 +155,20 @@ input.date{
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.02);
     background: rgba(136, 126, 126, 0.04);
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(38, 50, 56,0.7);
 }
 
-input.date:focus, input.date:hover {
+input.date:focus{
     width: 60%;
     padding: 10px;
     margin-top: 20px;
     border-radius: 20px;
     border: 2px solid rgba(0, 0, 0, 0.02);
     background: lightgrey;
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 12px;
 }
 
 input.formbutton{

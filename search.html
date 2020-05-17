@@ -9,16 +9,29 @@
 <body>
 	<header>
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
-		
+		<img id="loginicon" src="image/user.svg">
+		<br>
+		<a id="loginbutton" href="login.html">Login?</a>
 	</header>
+
 	<div class="main">
+
+		<h1>Book with #id</h1>
+		<form action="bookTicket.html">
+			<input class="text" type="text" name="ticketnum" placeholder="#Ticket Number">
+			<br>
+			<input class="formbutton" type="submit" value="Book">
+		</form>
+	</div>
+
+	<div id="search_res" class="main">
 		<h1>Search Results</h1>
 		<br>
-		<p>Data Displayed</p>
-		
+		<p style="height: 200px;">Choose the ticket id and search its availability in the book tab</p>
 	</div>
-	<footer>
+	
+	<!-- <footer>
 		<h1>Software engineering project</h1>
-	</footer>
+	</footer> -->
 </body>
 </html>
