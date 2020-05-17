@@ -1,6 +1,7 @@
 <?php
 $uname = $_POST['uname'];
 $password = $_POST['password'];
+$admin ='admin';
 
 if(isset($_POST['login'])) {
     $servername = "localhost";
@@ -18,10 +19,17 @@ if(isset($_POST['login'])) {
         $result = mysqli_query($connection, $sql);
 
         if (mysqli_num_rows($result) != 0){
+            $row = mysqli_fetch_assoc($result);
             setcookie('username',$row['uname'],time()+3600);
             session_start();
             $_SESSION['username'] = $row['uname'];
-            header('location: home.html');
+            if($row['uname'] == $admin) {
+                header('location: adminDboard.php');
+            }else {
+                
+                header('location: home.html');
+            }
+            
         } else {
 
             echo "<script>
