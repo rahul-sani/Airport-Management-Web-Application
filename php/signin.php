@@ -2,6 +2,7 @@
 $uname = $_POST['uname'];
 $password = $_POST['password'];
 $admin ='admin';
+$sys = 'sys';
 
 if(isset($_POST['login'])) {
     $servername = "localhost";
@@ -31,6 +32,9 @@ if(isset($_POST['login'])) {
 
             if($row['uname'] == $admin) {
                 header('location: adminDboard.php');
+            }
+            elseif ($row['uname'] == $sys) {
+                header('location: sysHome.php');
             }else {
                 
                 header('location: home.php');

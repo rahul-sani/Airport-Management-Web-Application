@@ -1,3 +1,25 @@
+
+<?php
+  session_start();
+
+ $name = $_SESSION['username'];
+ $count = $_SESSION['count'];
+ if(isset($name) and $count==0) {
+	 $_SESSION['count']=1;
+     echo "<script>
+    alert('Welcome to the System, $name ');
+    </script>";
+    
+ } elseif (isset($name) and $count>0) {
+	$_SESSION['count']=$_SESSION['count']+1;
+ }
+else {
+
+	header("location: ../html/login.html");
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
