@@ -14,6 +14,7 @@
 	</header>
 	<div class="main">
 		<form action="bookTicket.html">
+			<h1>Round Trip Booking</h1>
 			<div class="selectionbox">
 
 				<label for="from">From:</label>
@@ -93,10 +94,14 @@
 					<option value="Jammu and Kashmir">Jammu and Kashmir</option>
 				</select><br>
 			</div>
-			<label class="selectionbox" for="Date">Date Of Travel</label><br>
-			<input type="date" class="date" id="birthday" name="date"><br>
-			<label for="dateR">Date Of Return</label><input type="date" class="date" id="dateR" name="dateR"><br>
-			<input class="formbutton" type="submit" name="" value="Book">
+			<div class="selectionbox">
+				<label for="Date">Date Of Travel:</label>
+				<input type="date" class="bookingbox" id="birthday" name="date">
+			</div>
+			<div class="selectionbox">
+				<label for="dateR">Date Of Return:</label><input class="bookingbox" type="date" id="dateR" name="dateR">				
+			</div>
+			<input class="bookingbutton" type="submit" name="submit" value="Book">
 		</form>
 	</div>
 	<footer>
