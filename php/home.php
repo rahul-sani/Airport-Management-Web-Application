@@ -43,9 +43,6 @@ else {
 			<li class="menuitem">
 				<a href="../viewticket.html">View Tickets</a>
 			</li class="menuitem">
-			<li class="menuitem"> 
-				<a href="../search.html">Search Tickets</a>	
-			</li>
 			<li class="menuitem">
 				<a href="../preBook.html">Book Ticket</a>
 			</li>
