@@ -6,7 +6,7 @@ $sys = 'sys';
 
 if(isset($_POST['login'])) {
     $servername = "localhost";
-    $username = "r4hul";
+    $username = "r4hu1";
     $dbpassword = "Sani_1234";
     $dbname = "airport_management"; 
 

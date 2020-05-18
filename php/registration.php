@@ -10,7 +10,7 @@ $password = $_POST['password'];
 if (!empty($fname) || !empty($lname) || !empty($phno) || !empty($uname) || !empty($email) || !empty($password)) {
 
     $servername = "localhost";
-    $username = "r4hul";
+    $username = "r4hu1";
     $dbpassword = "Sani_1234";
     $dbname = "airport_management";  
 
