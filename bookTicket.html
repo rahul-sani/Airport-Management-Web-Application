@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +11,15 @@
 
 	<header>
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
+		<div class="login">
+			<img class="loginicon" src="image/user.svg">
+			<br>
+			<a class="loginbutton" href="php/sysHome.php">Home</a>
+		</div>
 	</header>
 	<div class="main">
 		<h1>Book Ticket</h1>
-		<form action="viewticket.html">
-			<input type="FirstName" class="text" placeholder="First Name">
+		<form action="php/bookTicket.php" class="text" placeholder="First Name">
 			<input type="LastName" class="text" placeholder="Last Name">
 			<input type="PhoneNumber" class="text" placeholder="Phone Number">
 			<input type="e-mail" class="text" placeholder="Your Email">

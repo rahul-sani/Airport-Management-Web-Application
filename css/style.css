@@ -13,54 +13,74 @@ header {                    /*constant for all pages*/
 
 /*......................................................................................*/
 
-#loginicon{
+.login{
 
-    position: absolute;
-    top:20px;
-    right: 45px;
-    width: 50px;
-    height: 50px;
+    position: relative;
+    top: -105px;
+    right: 5px;
+
 }
-#loginbutton{
+
+.login .loginicon{
 
     position: absolute;
-    top: 75px;
-    right: 20px;    
+    top: 28px;
+    right: 42px;
+    width: 70px;
+    height: 70px;
+}
+
+.login .loginbutton{
+
+    position: absolute;
+    top: 100px;
+    right: 23px;    
     color: black;
     background-color: none;
     border-radius: 5em;
-    border: black 4.5px solid;
+    border: black 6px solid;
     padding: 5px 20px 5px 20px;
     text-decoration: none;
+    font-weight: 600;
 }
-#loginbutton:hover , #loginbutton:active {
+.login .loginbutton:hover , .login .loginbutton:active {
 
     position: absolute;
-    top: 75px;
-    right: 20px;    
+    top: 100px;
+    right: 23px;       
     color: black;
     background-color: red;
     border-radius: 5em;
-    border: black 4.5px solid;
+    border: black 6px solid;
     padding: 5px 20px 5px 20px;
     text-decoration: none;
+    font-weight: 600;
 }
 
-#logintext{
+.login .logintext{
     position: absolute;
-    top: 70px;
-    right: 0px;
+    top: 73px;
+    right: 2px;
     margin-right: 20px;
     width: 100px;  
-    font-weight:600;
-    font-size:17px;
+    font-weight:1000;
+    font-size:16px;
     
 }
 
-#logoutbutton{
+.login .logouticon{
 
     position: absolute;
-    top: 120px;
+    top: 15px;
+    right: 42px;
+    width: 60px;
+    height: 60px;
+}
+
+.login .logoutbutton{
+
+    position: absolute;
+    top: 115px;
     right: 13px;    
     color: black;
     background-color: none;
@@ -68,12 +88,13 @@ header {                    /*constant for all pages*/
     border: black 4.5px solid;
     padding: 5px 20px 5px 20px;
     text-decoration: none;
+    font-weight: 600;
 }
 
-#logoutbutton:hover, #logoutbutton:active{
+.login .logoutbutton:hover, .login .logoutbutton:active{
 
     position: absolute;
-    top: 120px;
+    top: 115px;
     right: 13px;    
     color: black;
     background-color: red;
@@ -81,6 +102,7 @@ header {                    /*constant for all pages*/
     border: black 4.5px solid;
     padding: 5px 20px 5px 20px;
     text-decoration: none;
+    font-weight: 600;
 }
 
 /*..............................................................................*/

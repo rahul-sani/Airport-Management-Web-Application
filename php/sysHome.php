@@ -27,15 +27,21 @@ else {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<!-- <script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(){;
+		document.getElementById("logintext").innerHTML="hello "+username;});
+	</script> -->
 </head>
 <body>
 
 	<header>
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
-		<img id="loginicon" src="../image/user.svg">
-		<br>
-		<a id="logoutbutton" href="logout.php">Logout?</a>
-		<p id="logintext">Hello SysUser</p>
+		<div class="login">
+			<img class="logouticon" src="../image/user.svg">
+			<br>
+			<a class="logoutbutton" href="logout.php">Logout?</a>
+			<p class="logintext">Hello SysUser</p>
+		</div>
 	</header>
 	<div class="main">	
 
@@ -45,9 +51,11 @@ else {
 				<a href="../preBook.html">Book Ticket</a>
 			</li class="menuitem">
 			<li class="menuitem"> 
-				<a href="../index.html">Search Ticket</a>	
+				<a href="../ticketsearch.html">Search Ticket</a>	
 			</li>
-			</li>			
+			<li class="menuitem"> 
+				<a href="../cancelticket.html">Cancel Ticket</a>	
+			</li>		
 		</ul>
 	</div>
 	<footer>

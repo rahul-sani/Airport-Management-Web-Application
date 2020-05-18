@@ -17,12 +17,10 @@ if (!empty($fname) || !empty($lname) || !empty($phno) || !empty($uname) || !empt
     $connection = mysqli_connect($servername, $username,$dbpassword,$dbname);
     if(!$connection) {
         die("connection failed: " . mysqli_connect_error());
-    }
-    else {
+    }else {
         
        
-        $sql = "INSERT INTO users(fname,lname,phno,uname,email,password) VALUE ('$fname','$lname',$phno,'$uname','$email','$password')" ;
-        // echo $sql;
+        $sql = "INSERT INTO 'users' (fname,lname,phno,uname,email,password) VALUE ('$fname','$lname',$phno,'$uname','$email','$password')" ;
         
         if (mysqli_query($connection, $sql)) {
             echo "<script>
@@ -30,7 +28,7 @@ if (!empty($fname) || !empty($lname) || !empty($phno) || !empty($uname) || !empt
             window.location.href='../html/login.html';
             </script>";  
             
-        } else {
+        }else {
             $sql="SELECT uname from users where uname='$uname'";
             $result = mysqli_query($connection, $sql);
             $row = mysqli_fetch_assoc($result);
@@ -41,7 +39,7 @@ if (!empty($fname) || !empty($lname) || !empty($phno) || !empty($uname) || !empt
                 </script>";
             } else{
                 
-                echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                echo "Error: " . $sql . "<br>" . mysqli_error($connection);
 
             }     
             

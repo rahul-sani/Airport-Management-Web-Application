@@ -32,23 +32,25 @@ else {
 
 	<header>
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
-		<img id="loginicon" src="../image/user.svg">
-		<br>
-		<a id="logoutbutton" href="logout.php">Logout?</a>
-		<p id="logintext">Hello Admin</p>
+		<div class="login">
+			<img class="logouticon" src="../image/user.svg">
+			<br>
+			<a class="logoutbutton" href="logout.php">Logout?</a>
+			<p class="logintext">Hello <br>Admin</p>
+		</div>
 	</header>
 	<div class="main">	
 
 		<h1>Admin Home</h1>		
 		<ul class="menu">
 			<li class="menuitem">
-				<a href="../report.html">Passengers Report</a>
+				<a href="../passengers.html">Bookings</a>
 			</li class="menuitem">
 			<li class="menuitem"> 
-				<a href="../report.html">Flight Chart Report</a>	
+				<a href="../flights.html">Flights</a>	
 			</li>
 			<li class="menuitem">
-				<a href="../report.html">Accounts Report</a>
+				<a href="../accounts.html">Accounts</a>
 			</li>			
 		</ul>
 	</div>

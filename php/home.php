@@ -29,11 +29,12 @@ else {
 <body>
 	<header>
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
-		
-		<img id="loginicon" src="../image/user.svg">
-		<br>
-		<a id="logoutbutton" href="logout.php">Logout?</a>
-		<p id="logintext">Hello, [NAME]</p>
+		<div class="login">
+			<img class="logouticon" src="../image/user.svg">
+			<br>
+			<a class="logoutbutton" href="logout.php">Logout?</a>
+			<p class="logintext">Hello <br>User</p>
+		</div>
 		
 	</header>
 	<div class="main">
