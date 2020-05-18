@@ -346,3 +346,11 @@ input.bookingbutton:hover , input.bookingbutton:active {
     padding: 15px 40px 15px 40px;
     margin:10px auto 10px auto;
 }
+
+
+/*................................................................................*/
+
+.searchtable{
+
+    border: 1px solid black;
+}

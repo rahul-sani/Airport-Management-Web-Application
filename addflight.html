@@ -9,12 +9,21 @@
 <body>
 	<header>
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
+		<div class="login">
+			<img class="loginicon" src="image/user.svg">
+			<br>
+			<a class="loginbutton" href="php/sysHome.php">Home</a>
+		</div>
 	</header>
 	<div class="main">
 		<form action="viewticket.html" >
-			<input class= "text" id="a" type="text" name="from" placeholder="From">
+			
+			<input class= "text" type="text" name="fname" placeholder="Flight Name">
+			<input class= "text" type="text" name="from" placeholder="From">
 			<input class= "text" type="text" name="to" placeholder="Destination">
-			<input class= "text" type="date" name="departure" placeholder="DD/MM/YYYY">
+			<input class= "text" type="text" name="" placeholder="Date">
+			<input class= "text" type="text" name="departure" placeholder="Departure">
+			<input class= "text" type="text" name="departure" placeholder="Arrival">
 			<br>
 			<input class="formbutton" type="submit" name="search" value="Search">
 		</form>
