@@ -6,8 +6,8 @@ $sys = 'sys';
 
 if(isset($_POST['login'])) {
     $servername = "localhost";
-    $username = "a";
-    $dbpassword = "a";
+    $username = "r4hu1";
+    $dbpassword = "Sani_1234";
     $dbname = "airport_management"; 
 
     $connection = mysqli_connect($servername, $username,$dbpassword,$dbname);
