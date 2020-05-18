@@ -16,16 +16,16 @@
 		</div>
 	</header>
 	<div class="main">
-		<form action="viewticket.html" >
-			
-			<input class= "text" type="text" name="fname" placeholder="Flight Name">
-			<input class= "text" type="text" name="from" placeholder="From">
-			<input class= "text" type="text" name="to" placeholder="Destination">
-			<input class= "text" type="text" name="" placeholder="Date">
-			<input class= "text" type="text" name="departure" placeholder="Departure">
-			<input class= "text" type="text" name="departure" placeholder="Arrival">
+		<form action="php/flight_control.php" method="GET">			<!-- <form action="viewticket.html" method="GET">-->
+			<input class= "text" type="text" name="flight_id" placeholder="Flight Id">
+			<input class= "text" type="text" name="flight_name" placeholder="Flight Name">
+			<input class= "text" type="text" name="fl_from" placeholder="From">
+			<input class= "text" type="text" name="fl_to" placeholder="Destination">
+			<input class= "text" type="date" name="date" placeholder="Date">
+			<input class= "text" type="time" name="departure" placeholder="Departure">
+			<input class= "text" type="time" name="arrival" placeholder="Arrival">
 			<br>
-			<input class="formbutton" type="submit" name="search" value="Search">
+			<input class="formbutton" type="submit" name="add" value="Add">
 		</form>
 		
 	</div>

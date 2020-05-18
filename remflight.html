@@ -18,10 +18,10 @@
 
 	<div class="main">
 		<h1>Cancel Flight by #id</h1">
-		<form action="php/backtohome.php" >
-			<input class="text" type="text" name="ticketnum" placeholder="#Flight ID">
+		<form action="php/backtohome.php" method="GET" >
+			<input class="text" type="text" name="flight_id" placeholder="#Flight ID">
 			<br>
-			<input class="formbutton" type="submit" value="Cancel">
+			<input class="formbutton" type="submit" name ="delete" value="Cancel">
 		</form>
 	</div>
 
