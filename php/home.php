@@ -42,7 +42,7 @@ else {
 		<h1>Home</h1>
 		<ul class="menu">
 			<li class="menuitem">
-				<a href="../viewticket.html">View Tickets</a>
+				<a href="../viewticket.html">Manage Booking</a>
 			</li class="menuitem">
 			<li class="menuitem">
 				<a href="../preBook.html">Book Ticket</a>

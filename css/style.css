@@ -134,6 +134,16 @@ div h1{
     font-size: 23px;        	
 }
 
+div.main p{
+
+    margin: 10px 25% auto 25%;
+    font-size: 12px;
+    color: green;
+    background: rgba(136, 126, 126, 0.04);
+    border-radius: 20px;
+    padding: 5px;
+}
+
 
 /*..............................................................................*/
 
@@ -153,7 +163,7 @@ input.text{
 input.text:focus {
 	width: 60%;
     color: rgb(38, 50, 56);
-    font-weight: 700;ssssssssssssss
+    font-weight: 700;
     font-size: 14px;
     letter-spacing: 1px;
     background: lightgrey;

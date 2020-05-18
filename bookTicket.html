@@ -14,15 +14,16 @@
 		<div class="login">
 			<img class="loginicon" src="image/user.svg">
 			<br>
-			<a class="loginbutton" href="php/sysHome.php">Home</a>
+			<a class="loginbutton" href="php/backtohome.php">Home</a>
 		</div>
 	</header>
 	<div class="main">
 		<h1>Book Ticket</h1>
-		<form action="php/bookTicket.php" class="text" placeholder="First Name">
+		<form action="php/bookTicket.php">
+
+			<input type="text" class="text" placeholder="First Name">
 			<input type="LastName" class="text" placeholder="Last Name">
 			<input type="PhoneNumber" class="text" placeholder="Phone Number">
-			<input type="e-mail" class="text" placeholder="Your Email">
 			<label class="formlabel"for="birthday">Date Of Birth</label>
 			<input type="date" class="date" id="birthday" name="birthday"><br>
 			<input type="submit" name="submit" class="formbutton" value="Book">
