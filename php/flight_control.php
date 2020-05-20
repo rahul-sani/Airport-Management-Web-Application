@@ -28,7 +28,7 @@ $servername = "localhost";
         $sql = "INSERT INTO flight_details values($flight_id,'$flight_name','$from','$to',STR_TO_DATE('$date', '%m-%d-%Y'),STR_TO_DATE('$departure','%h:%i %p'),STR_TO_DATE('$arrival','%h:%i %p'))";
         if (mysqli_query($connection, $sql)) {
             echo "<script>
-            alert('Flight succesfully added to the db!');
+            alert('Flight Service succesfully added to the db!');
             window.location.href='../html/login.html';
             </script>";    
         } else{
