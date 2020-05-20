@@ -17,7 +17,6 @@ if(isset($_POST['login'])) {
     } 
     else {
         $sql = "SELECT uname FROM users where uname = '$uname' and password= '$password' ";
-        setcookie('sql',$sql,time()+3600);
         $result = mysqli_query($connection, $sql);
 
         if (mysqli_num_rows($result) != 0){

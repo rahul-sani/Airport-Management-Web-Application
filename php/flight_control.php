@@ -11,7 +11,7 @@ $arrival = $_GET['arrival'];
 $flightAdd= $_GET['add'];
 $flightRem= $_GET['delete'];
 
-echo $departure;
+
 
 $servername = "localhost";
     $username = "r4hu1";
@@ -25,9 +25,26 @@ $servername = "localhost";
 
         if(isset($flightAdd)) {
 
-        // $sql = "INSERT INTO flight_details values($flight_id,'$flight_name','$from','$to',STR_TO_DATE('$date', '%m-%d-%Y'),STR_TO_DATE('$departure','%h:%i %p'),STR_TO_DATE('$arrival','%h:%i %p'))";
-        // echo $sql;
-        // echo "so far so good";
+        $sql = "INSERT INTO flight_details values($flight_id,'$flight_name','$from','$to',STR_TO_DATE('$date', '%m-%d-%Y'),STR_TO_DATE('$departure','%h:%i %p'),STR_TO_DATE('$arrival','%h:%i %p'))";
+        if (mysqli_query($connection, $sql)) {
+            echo "<script>
+            alert('Flight succesfully added to the db!');
+            window.location.href='../html/login.html';
+            </script>";    
+        } else{
+            $sql="SELECT flight_id from flight_details where flight_id='$flight_id'";
+            $result = mysqli_query($connection, $sql);
+            $row = mysqli_fetch_assoc($result);
+            if($row['flight_id'] == $flight_id){
+                echo "<script>
+                alert('A Flight with the same ID exist!');
+                window.location.href='../html/createAccount.html';
+                </script>";
+            } else{          
+                echo "Error: " . $sql . "<br>" . mysqli_error($connection);
+            } 
+
+        }
 
 
     
@@ -37,11 +54,12 @@ $servername = "localhost";
 
     }
 
+    
 
 
 
        
-//         $sql = "INSERT INTO users(fname,lname,phno,uname,email,password) VALUE ('$fname','$lname',$phno,'$uname','$email','$password')" ;
+//         $sql = "INSERT INTO users(fname,lname,phno,flight_id,email,password) VALUE ('$fname','$lname',$phno,'$flight_id','$email','$password')" ;
 //         // echo $sql;
         
 //         if (mysqli_query($connection, $sql)) {
@@ -51,10 +69,10 @@ $servername = "localhost";
 //             </script>";  
             
 //         } else {
-//             $sql="SELECT uname from users where uname='$uname'";
+//             $sql="SELECT flight_id from users where flight_id='$flight_id'";
 //             $result = mysqli_query($connection, $sql);
 //             $row = mysqli_fetch_assoc($result);
-//             if($row['uname'] == $uname){
+//             if($row['flight_id'] == $flight_id){
 //                 echo "<script>
 //                 alert('Username already in use,Change Username!');
 //                 window.location.href='../html/createAccount.html';

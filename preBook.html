@@ -12,13 +12,14 @@
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
 	</header>
 	<div class="main">
-		<form action="search.html">
+		<form action="php/flight_search.php" method="GET">	<!-- search.html-->
+		
 			<h1>Book Ticket</h1>
 
 			<div class="selectionbox">
 
 				<label for="from">From:</label>
-				<select id="from" class="bookingbox">
+				<select id="from" class="bookingbox" name="from" >
 					<option value="None">Choose</option>
 					<option value="Andhra Pradesh">Andhra Pradesh</option>
 					<option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -59,7 +60,7 @@
 			<div class="selectionbox">
 
 				<label for="to">To:</label>
-				<select id="to" class="bookingbox">
+				<select id="to" class="bookingbox" name="to" >
 					<option value="None">Choose</option>
 					<option value="Andhra Pradesh">Andhra Pradesh</option>
 					<option value="Arunachal Pradesh">Arunachal Pradesh</option>
