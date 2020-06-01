@@ -29,7 +29,7 @@ $dbname = "airport_management";
         $departure = $row['departure'];
         $arrival = $row['arrival'];
 
-        $sql = "SELECT count(book_id) as a FROM book_ticket";
+        $sql = "SELECT max(book_id) as a FROM book_ticket";
         mysqli_query($connection, $sql);
         $result = mysqli_query($connection, $sql);
         $row = mysqli_fetch_assoc($result);
