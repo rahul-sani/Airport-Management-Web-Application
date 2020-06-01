@@ -1,55 +1,120 @@
--- MySQL dump 10.13  Distrib 5.7.30, for Linux (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: airport_management
--- ------------------------------------------------------
--- Server version	5.7.30-0ubuntu0.18.04.1
+-- Host: localhost
+-- Generation Time: Jun 01, 2020 at 09:13 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `airport_management`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `book_ticket`
+--
+
+CREATE TABLE `book_ticket` (
+  `book_id` int(10) NOT NULL,
+  `flight_id` int(6) NOT NULL,
+  `user` varchar(30) NOT NULL,
+  `flight_name` varchar(30) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `phno` int(10) DEFAULT NULL,
+  `bday` date DEFAULT NULL,
+  `fl_from` varchar(30) DEFAULT NULL,
+  `fl_to` varchar(30) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `departure` time DEFAULT NULL,
+  `arrival` time DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `book_ticket`
+--
+
+INSERT INTO `book_ticket` (`book_id`, `flight_id`, `user`, `flight_name`, `name`, `phno`, `bday`, `fl_from`, `fl_to`, `date`, `departure`, `arrival`) VALUES
+(2, 23, 'sys', 'aba', 'a 2', 3, '2020-05-07', 'Goa', 'Goa', '2020-05-12', '00:00:00', '00:00:00'),
+(3, 23, 'sys', 'aba', 'a s', 12, '2020-05-07', 'Goa', 'Goa', '2020-05-12', '00:00:00', '00:00:00'),
+(4, 23, 'sys', 'aba', 'a asd', 12, '2020-05-06', 'Goa', 'Goa', '2020-05-12', '00:00:00', '00:00:00'),
+(5, 13, 'sys', 'aba', 'a 2', 4, '2020-06-05', 'Goa', 'Goa', '2020-05-12', '00:00:00', '00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flight_details`
+--
+
+CREATE TABLE `flight_details` (
+  `flight_id` int(11) NOT NULL,
+  `flight_name` varchar(10) DEFAULT NULL,
+  `fl_from` varchar(20) DEFAULT NULL,
+  `fl_to` varchar(20) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `departure` varchar(8) DEFAULT NULL,
+  `arrival` varchar(8) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `fname` varchar(40) DEFAULT NULL,
   `lname` varchar(40) DEFAULT NULL,
   `phno` int(11) DEFAULT NULL,
   `uname` varchar(10) NOT NULL,
   `email` varchar(40) DEFAULT NULL,
-  `password` varchar(16) DEFAULT NULL,
-  PRIMARY KEY (`uname`)
+  `password` varchar(16) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES ('abc','abc',9999,'abc','abc@mail.com','abc'),('admin','admin',99999,'admin','admin@mail.com','admin'),('test','test',9999,'test','test@mail.com','test'),('test2','test2',9999,'test2','test2@gmail,com','test2');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `users` (`fname`, `lname`, `phno`, `uname`, `email`, `password`) VALUES
+('admin', 'admin', 99999, 'admin', 'admin@mail.com', 'admin'),
+('sys', 'sys', 9999, 'sys', 'abc@mail.com', 'sys'),
+('test', 'test', 9999, 'test', 'test@mail.com', 'test');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `book_ticket`
+--
+ALTER TABLE `book_ticket`
+  ADD PRIMARY KEY (`book_id`);
+
+--
+-- Indexes for table `flight_details`
+--
+ALTER TABLE `flight_details`
+  ADD PRIMARY KEY (`flight_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`uname`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2020-05-17 10:00:40
