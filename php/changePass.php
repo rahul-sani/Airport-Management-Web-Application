@@ -7,8 +7,8 @@ $pass2 = $_GET['pass2'];
 
 if($pass1==$pass2 and isset($uname)){
     $servername = "localhost";
-    $username = "r4hu1";
-    $dbpassword = "Sani_1234";
+    $username = "software_proj";
+    $dbpassword = "soft_proj";
     $dbname = "airport_management"; 
 
     $connection = mysqli_connect($servername, $username,$dbpassword,$dbname);

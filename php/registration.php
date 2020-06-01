@@ -10,8 +10,8 @@ $password = $_POST['password'];
 if (!empty($fname) || !empty($lname) || !empty($phno) || !empty($uname) || !empty($email) || !empty($password)) {
 
     $servername = "localhost";
-    $username = "r4hu1";
-    $dbpassword = "Sani_1234";
+    $username = "software_proj";
+    $dbpassword = "soft_proj";
     $dbname = "airport_management";  
 
     $connection = mysqli_connect($servername, $username,$dbpassword,$dbname);

@@ -33,7 +33,8 @@ else {
 			<img class="logouticon" src="../image/user.svg">
 			<br>
 			<a class="logoutbutton" href="logout.php">Logout?</a>
-			<p class="logintext">Hello <br>User</p>
+			<p class="logintext"><?php
+			echo 'Hello <br>'.$_COOKIE['username']?></p>
 		</div>
 		
 	</header>
@@ -42,7 +43,7 @@ else {
 		<h1>Home</h1>
 		<ul class="menu">
 			<li class="menuitem">
-				<a href="../viewticket.html">Manage Booking</a>
+				<a href="viewticket.php">Manage Booking</a>
 			</li class="menuitem">
 			<li class="menuitem">
 				<a href="../preBook.html">Book Ticket</a>

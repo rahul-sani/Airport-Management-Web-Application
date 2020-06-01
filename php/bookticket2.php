@@ -1,37 +1,50 @@
 <?php
 
-$flight_id = $_GET['flight_id'];
-$flight_name = $_GET['flight_name'];
-$from = $_GET['fl_from'];
-$to= $_GET['fl_to'];
-$date= $_GET['date'];
-$departure = $_GET['departure'];
-$arrival = $_GET['arrival'];
+session_start();
+$flight_id = $_SESSION['flight_id'];
+$from = $_SESSION['from'];
+$to= $_SESSION['to'];
+$date= $_SESSION['date'];
+$user=$_SESSION['username']; 
 
-$flightAdd= $_GET['add'];
-$flightRem= $_GET['delete'];
-
+$name=$_GET['fname']." ".$_GET['lname'];
+$phno=$_GET['ph_no'];
+$bday=$_GET['bday'];
 
 
 $servername = "localhost";
-    $username = "r4hu1";
-    $dbpassword = "Sani_1234";
-    $dbname = "airport_management";  
+$username = "software_proj";
+$dbpassword = "soft_proj";
+$dbname = "airport_management";  
 
     $connection = mysqli_connect($servername, $username,$dbpassword,$dbname);
-    if(!$connection) {
+    if(mysqli_connect_errno()) {
         die("connection failed: " . mysqli_connect_error());
     } else {
 
-        //Enter valid sql query
-        $sql = "INSERT INTO bookticket values($flight_id,'$flight_name','$from','$to',STR_TO_DATE('$date', '%m-%d-%Y'),STR_TO_DATE('$departure','%h:%i %p'),STR_TO_DATE('$arrival','%h:%i %p'))";
+        $sql = "SELECT flight_name, departure,arrival FROM flight_details where flight_id = '$flight_id' ";
+        $result = mysqli_query($connection, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $flight_name = $row['flight_name'];
+        $departure = $row['departure'];
+        $arrival = $row['arrival'];
+
+        $sql = "SELECT count(book_id) as a FROM book_ticket";
+        mysqli_query($connection, $sql);
+        $result = mysqli_query($connection, $sql);
+        $row = mysqli_fetch_assoc($result);
+        $book_id = $row['a']+1;
+
+        $sql = "INSERT INTO book_ticket values('$book_id','$flight_id','$user','$flight_name','$name','$phno','$bday','$from','$to','$date','$departure','$arrival')";
         if (mysqli_query($connection, $sql)) {
+            $_SESSION['book_id'] = $book_id;
             echo "<script>
-            alert('Flight Ticker added to the db!');
             window.location.href='bookTicket.php';
             </script>";    
         } else{
-                   
+                echo "<script>
+                alert('Problem Occured!');
+                </script>";   
                 echo "Error: " . $sql . "<br>" . mysqli_error($connection);
             
         }

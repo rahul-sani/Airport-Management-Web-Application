@@ -3,23 +3,28 @@
 $from= $_GET['from'];
 $to=$_GET['to'];
 $date=$_GET['date'];
+
+session_start();
 $search=$_GET['submit'];
+$_SESSION['from']=$from;
+$_SESSION['to']=$to;
+$_SESSION['date']=$date;
 
 if(isset($search)) {
     $servername = "localhost";
-    $username = "r4hu1";
-    $dbpassword = "Sani_1234";
+    $username = "software_proj";
+	$dbpassword = "soft_proj";
     $dbname = "airport_management"; 
 
     $connection = mysqli_connect($servername, $username,$dbpassword,$dbname);
 
-    if(!$connection) {
+    if(mysqli_connect_errno()) {
         die("Connection failed : " . mysqli_connect_error());
     } else {
-        $sql = "SELECT flight_id,flight_name, fl_from,fl_to FROM flight_details where fl_from='$from' and fl_to='$to' and STR_TO_DATE('$date', '%m-%d-%Y')";
+        $sql = "SELECT flight_id,flight_name, departure,arrival FROM flight_details where fl_from='$from' and fl_to='$to' AND date='$date'";
         $result = mysqli_query($connection, $sql);
 
-    }
+    } 
 }
 
 ?>
@@ -36,18 +41,18 @@ if(isset($search)) {
 	<header>
 		<h1><span id="plane">&#9992</span> Airport Management System</h1>
 		<div class="login">
-			<img class="loginicon" src="image/user.svg">
+			<img class="loginicon" src="../image/user.svg">
 			<br>
-			<a class="loginbutton" href="php/backtohome.php">Home</a>
+			<a class="loginbutton" href="backtohome.php">Home</a>
 		</div>
 	</header>
 
 	<div class="main">
 		<h1>Book Ticket with #FlightID</h1">
 		<form action="bookticket1.php" method='GET' > 
-			<input class="text" type="text" name="ticketnum" placeholder="#Flight ID" required>
+			<input class="text" type="text" name="flight_id" placeholder="#Flight ID" required>
 			<br>
-			<input class="formbutton" type="submit" value="flight_id">
+			<input class="formbutton" type="submit" value="Book">
 		</form>
 	</div>
 
@@ -63,18 +68,15 @@ if(isset($search)) {
 				<th>Arrival</th>
             </tr>
             <?php
-                while($row = mysqli_fetch_assoc($result)){             
-            ?>
-            <tr>
-                <th><?php echo $row.['flight_id']; ?></th>
-                <th><?php echo $row.['flight_name']; ?></th>
-                <th><?php echo $row.['fl_from']; ?></th>
-                <th><?php echo $row.['fl_to']; ?></th>
-            </tr>
-            <?php
-                } 
-            ?>
 
+            	while ($row = mysqli_fetch_assoc($result)) {
+            		echo "<tr>";
+			    	foreach ($row as $key => $value) {
+				    	echo "<td>".$value."</td>";				
+				    }
+				    echo "</tr>";
+			    }
+	        ?>
 		</table>
 	</div>
 	<footer>

@@ -27,10 +27,7 @@ else {
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<!-- <script type="text/javascript">
-		document.addEventListener("DOMContentLoaded", function(){
-		document.getElementById("logintext").innerHTML="hello "+username;});
-	</script> -->
+
 </head>
 <body>
 
@@ -40,7 +37,8 @@ else {
 			<img class="logouticon" src="../image/user.svg">
 			<br>
 			<a class="logoutbutton" href="logout.php">Logout?</a>
-			<p class="logintext">Hello SysUser</p>
+			<p class="logintext"><?php
+			echo 'Hello <br>'.$_COOKIE['username']?></p>
 		</div>
 	</header>
 	<div class="main">	

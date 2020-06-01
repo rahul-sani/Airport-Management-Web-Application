@@ -36,7 +36,8 @@ else {
 			<img class="logouticon" src="../image/user.svg">
 			<br>
 			<a class="logoutbutton" href="logout.php">Logout?</a>
-			<p class="logintext">Hello <br>Admin</p>
+			<p class="logintext"><?php
+			echo 'Hello <br>'.$_COOKIE['username']?></p>
 		</div>
 	</header>
 	<div class="main">	
@@ -44,13 +45,13 @@ else {
 		<h1>Admin Home</h1>		
 		<ul class="menu">
 			<li class="menuitem">
-				<a href="../passengers.html">Bookings</a>
+				<a href="passengers.php" >Bookings</a>
 			</li class="menuitem">
 			<li class="menuitem"> 
-				<a href="../flights.html">Flights</a>	
+				<a href="flights.php" >Flights</a>	
 			</li>
 			<li class="menuitem">
-				<a href="../accounts.html">Accounts</a>
+				<a href="accounts.php" >Accounts</a>
 			</li>			
 		</ul>
 	</div>
